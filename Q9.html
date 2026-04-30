@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Update</title>
+</head>
+<body>
+
+    <ul id="ul">
+        <li>order</li>
+        <li>status</li>
+        <li>update</li>
+    </ul>
+
+    <script>
+        function getOrderInfo(info) {
+            return info;
+        }
+
+        const statusText = getOrderInfo("Order Delivered");
+
+        const ul = document.getElementById("ul");
+        const li = document.createElement("li");
+        li.textContent = statusText;
+        ul.appendChild(li);
+    </script>
+
+</body>
+</html>

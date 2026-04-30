@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    name: <input type="text" name="" id="name"><br>
+    email: <input type="text" name="" id="email"><br>
+    password: <input type="password" name="" id="password"><br>
+
+    <button id="b1">Button</button>
+
+    <script>
+        const b1=document.getElementById("b1")
+        b1.addEventListener("click", function() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            alert(`Name: ${name}, Email: ${email}, Password: ${password}`);
+        })
+
+        const nameReg = /^[a-zA-Z\s]+$/;
+        const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+        b1.addEventListener("click", function() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (!nameReg.test(name)) {
+                alert("Invalid name format");
+                return;
+            }
+
+            if (!emailReg.test(email)) {
+                alert("Invalid email format");
+                return;
+            }
+
+            if (!passwordReg.test(password)) {
+                alert("Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
+                return;
+            }
+
+            alert(`Name: ${name}, Email: ${email}, Password: ${password}`);
+        })
+    </script>
+</body>
+</html>
